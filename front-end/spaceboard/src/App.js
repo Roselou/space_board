@@ -5,18 +5,20 @@ import Galaxy from './pages/galaxy.js'
 import Planet from './pages/planet.js'
 import Star from './pages/stars.js'
 import Nebula from './pages/nebula.js'
+import BlackHole from './pages/blackHole.js'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">SPACE BOARD</h1>
+          <h1 className="App-title">SPACE_BOARD</h1>
         </header>
         {/* <Galaxy /> */}
         {/* <Planet /> */}
         {/* <Star /> */}
-        <Nebula />
+        {/* <Nebula /> */}
+        <BlackHole />
       </div>
     );
   }
