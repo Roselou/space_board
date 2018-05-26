@@ -2,32 +2,32 @@ import React, {Component} from 'react'
 
 class Galaxy extends Component {
     state = {
-       nasa: [],
+       galaxy: [],
 
     }
 
     componentDidMount = () => {
-        fetch('https://images-api.nasa.gov/search?q=galaxies&media_type=video')
+        fetch('https://images-api.nasa.gov/search?q=galaxies&media_type=image')
 
         .then(res => res.json())
         .then(data => {
-            this.setState({nasa: data.collection.items})
+            this.setState({galaxy: data.collection.items})
         })
     }
 
 
     render(){
-        console.log(this.state.nasa)
-        let nasaResult = this.state.nasa.map(item => {
+        console.log(this.state.galaxy)
+        let galaxyResult = this.state.galaxy.map(item => {
             return <div key = {item.data[0].nasa_id}>
             <h3> {item.data[0].title} </h3>
-            <video controls src={item.href[0]} alt="NASA Galaxy" width="620"> </video>
+            <img controls src={item.links[0].href} alt="NASA Galaxy" width="620"/>
             <p> {item.data[0].description} </p>
             </div>
         })
         return (
             <div> 
-             {nasaResult}
+             {galaxyResult}
                 </div>
 
 
